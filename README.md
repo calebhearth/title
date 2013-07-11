@@ -30,3 +30,13 @@ def to_s
   name
 end
 ```
+
+## Acknowledgement
+
+Though the idea of translating titles was arrived at seperately, [Brandon
+Keepers] wrote [Abusing Rails I18N to Set Page Titles] which outlines an
+extremely similar approach, and from whence came the idea of using the view
+context to get local assigns to be used in interpolation.
+
+[Brandon Keepers]: https://github.com/bkeepers
+[Abusing Rails I18N to Set Page Titles]: http://opensoul.org/blog/archives/2012/11/05/abusing-rails-i18n-to-set-page-titles/
