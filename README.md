@@ -1,29 +1,32 @@
 # Title
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'title'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install title
+Translations for \<title\>s!
 
 ## Usage
 
-TODO: Write usage instructions here
+Add to your translations:
 
-## Contributing
+```yaml
+en:
+  titles:
+    application: AppName
+    dashboards:
+      show: Dashboard
+    users:
+      show: '%{user}'
+      new: Registration
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+And to your HTML:
+
+```erb
+<title><%= title %></title>
+```
+
+And to your `User` model:
+
+```ruby
+def to_s
+  name
+end
+```
