@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'pry'
 require 'title'
 
 describe Title::TitleHelper do
