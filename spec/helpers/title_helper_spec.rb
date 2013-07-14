@@ -1,4 +1,6 @@
-require 'rubygems'
+require 'coveralls'
+Coveralls.wear!
+
 require 'title'
 
 describe Title::TitleHelper do
