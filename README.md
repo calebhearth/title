@@ -1,5 +1,7 @@
 # Title
 
+[![Build Status](https://travis-ci.org/calebthompson/title.png)](https://travis-ci.org/calebthompson/title)
+
 Translations for \<title\>s!
 
 ## Usage
