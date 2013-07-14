@@ -1,6 +1,7 @@
 # Title
 
 [![Build Status](https://travis-ci.org/calebthompson/title.png)](https://travis-ci.org/calebthompson/title)
+[![Code Climate](https://codeclimate.com/github/calebthompson/title.png)](https://codeclimate.com/github/calebthompson/title)
 [![Coverage Status](https://coveralls.io/repos/calebthompson/title/badge.png)](https://coveralls.io/r/calebthompson/title)
 
 Translations for \<title\>s!
