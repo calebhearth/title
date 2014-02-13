@@ -17,6 +17,14 @@ describe Title::TitleHelper do
     expect(helper.title).to eq('Not Dummy')
   end
 
+  it 'uses a :default key at an arbitrary point in the lookup path' do
+    stub_rails
+    stub_controller_and_action('engine/users', :show)
+    load_translations(engine: { default: 'Engine name' })
+
+    expect(helper.title).to eq 'Engine name'
+  end
+
   it 'matches controller/action to translation and uses that title' do
     stub_rails
     stub_controller_and_action(:dashboards, :show)
