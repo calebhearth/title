@@ -35,6 +35,19 @@ def to_s
 end
 ```
 
+You can pass additional values to the `#title` helper, which can be referenced
+in your translations:
+
+```erb
+<title><%= title(user_name: current_user.name) %></title>
+```
+
+```yaml
+en:
+  titles:
+    application: 'AppName - %{user_name}'
+```
+
 ## Acknowledgement
 
 Though the idea of translating titles was arrived at seperately, [Brandon
