@@ -45,7 +45,7 @@ in your translations:
 ```yaml
 en:
   titles:
-    application: 'AppName - %{user_name}'
+    application: '%{user_name} - AppName'
 ```
 
 ## Acknowledgement
