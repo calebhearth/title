@@ -1,7 +1,8 @@
 module Title
   module TitleHelper
-    def title
-      PageTitle.new(controller_path, action_name, controller.view_assigns.symbolize_keys).to_s
+    def title(additional_context = {})
+      context = controller.view_assigns.merge(additional_context).symbolize_keys
+      PageTitle.new(controller_path, action_name, context).to_s
     end
 
     class PageTitle
