@@ -37,15 +37,24 @@ describe Title::TitleHelper do
     stub_rails
     stub_controller_and_action(:users, :show)
     load_translations(users: { show: '%{name}' })
-    helper.stub_chain(:controller, :view_assigns, :symbolize_keys).and_return({ name: 'Caleb' })
+    helper.stub_chain(:controller, :view_assigns).and_return('name' => 'Caleb')
 
     expect(helper.title).to eq('Caleb')
+  end
+
+  it 'can accept a hash of extra context in addition to the view assigns' do
+    stub_rails
+    stub_controller_and_action(:users, :show)
+    load_translations(users: { show: '%{greeting} %{name}' })
+    helper.stub_chain(:controller, :view_assigns).and_return('name' => 'Caleb')
+
+    expect(helper.title(greeting: 'Hello')).to eq('Hello Caleb')
   end
 
   def stub_rails
     helper.stub(:controller_path).and_return('dashboards')
     helper.stub(:action_name)
-    helper.stub_chain(:controller, :view_assigns, :symbolize_keys).and_return({})
+    helper.stub_chain(:controller, :view_assigns).and_return({})
     Rails.stub_chain(:application, :class).and_return('Dummy::Application')
   end
 
