@@ -13,6 +13,8 @@ Add to your translations:
 ```yaml
 en:
   titles:
+    # titles.application defaults to the sigficant portion of
+    # AppName::Application, which would be:
     application: AppName
     dashboards:
       show: Dashboard
