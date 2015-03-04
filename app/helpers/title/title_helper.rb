@@ -8,7 +8,15 @@ module Title
     class PageTitle
       def initialize(controller_path, action_name, context)
         @controller_path = controller_path
-        @action_name = action_name
+        @action_name = case action_name
+          when 'create'
+            'new'
+          when 'update'
+            'edit'
+          else
+            action_name
+          end
+          
         @context = context
       end
 
