@@ -37,7 +37,7 @@ describe Title::TitleHelper do
     stub_rails
     stub_controller_and_action(:users, :show)
     load_translations(users: { show: '%{name}' })
-    helper.stub_chain(:controller, :view_assigns).and_return('name' => 'Caleb')
+    allow(helper).to receive_message_chain(:controller, :view_assigns).and_return('name' => 'Caleb')
 
     expect(helper.title).to eq('Caleb')
   end
@@ -46,20 +46,21 @@ describe Title::TitleHelper do
     stub_rails
     stub_controller_and_action(:users, :show)
     load_translations(users: { show: '%{greeting} %{name}' })
-    helper.stub_chain(:controller, :view_assigns).and_return('name' => 'Caleb')
+    allow(helper).to receive_message_chain(:controller, :view_assigns).and_return('name' => 'Caleb')
 
     expect(helper.title(greeting: 'Hello')).to eq('Hello Caleb')
   end
 
   def stub_rails
-    helper.stub(:controller_path).and_return('dashboards')
-    helper.stub(:action_name)
-    helper.stub_chain(:controller, :view_assigns).and_return({})
-    Rails.stub_chain(:application, :class).and_return('Dummy::Application')
+    allow(helper).to receive(:controller_path).and_return('dashboards')
+    allow(helper).to receive(:action_name)
+    allow(helper).to receive_message_chain(:controller, :view_assigns).and_return({})
+    allow(Rails).to receive_message_chain(:application, :class).and_return('Dummy::Application')
   end
 
   def stub_controller_and_action(controller, action)
-    helper.stub(controller_path: controller.to_s, action_name: action.to_s)
+    allow(helper).to receive(:controller_path).and_return(controller.to_s)
+    allow(helper).to receive(:action_name).and_return(action.to_s)
   end
 
   def helper
