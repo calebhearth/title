@@ -8,15 +8,7 @@ module Title
     class PageTitle
       def initialize(controller_path, action_name, context)
         @controller_path = controller_path
-        @action_name = case action_name
-          when 'create'
-            'new'
-          when 'update'
-            'edit'
-          else
-            action_name
-          end
-          
+        @action_name = adjusted_action_name(action_name)
         @context = context
       end
 
@@ -55,6 +47,17 @@ module Title
           lookup_path.pop
         end
         defaults.reverse
+      end
+
+      def adjusted_action_name(action_name)
+        case action_name
+        when 'create'
+          'new'
+        when 'update'
+          'edit'
+        else
+          action_name
+        end
       end
     end
   end
