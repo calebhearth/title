@@ -15,7 +15,7 @@ module Title
       def to_s
         I18n.t(
           [:titles, controller_name, action_name].join('.'),
-          context.merge(default: defaults)
+          safe_context.merge(default: defaults)
         )
       end
 
@@ -58,6 +58,10 @@ module Title
         else
           action_name
         end
+      end
+
+      def safe_context
+        context.except(*I18n::RESERVED_KEYS)
       end
     end
   end

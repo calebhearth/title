@@ -51,6 +51,15 @@ describe Title::TitleHelper do
     expect(helper.title(greeting: 'Hello')).to eq('Hello Caleb')
   end
 
+  it 'makes context safe to be passed as interpolation options' do
+    stub_rails
+    stub_controller_and_action(:users, :show)
+    load_translations(users: { show: 'User' })
+    allow(helper).to receive_message_chain(:controller, :view_assigns).and_return('scope' => 'Foo')
+
+    expect(helper.title).to eq('User')
+  end
+
   def stub_rails
     allow(helper).to receive(:controller_path).and_return('dashboards')
     allow(helper).to receive(:action_name)
