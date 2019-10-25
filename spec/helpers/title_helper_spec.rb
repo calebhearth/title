@@ -3,7 +3,7 @@ Coveralls.wear!
 
 require 'title'
 
-describe Title::TitleHelper do
+RSpec.describe Title::TitleHelper do
   it 'is the app name when no translation is present' do
     stub_rails
 
