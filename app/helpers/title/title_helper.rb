@@ -15,7 +15,7 @@ module Title
       def to_s
         I18n.t(
           [:titles, controller_name, action_name].join('.'),
-          safe_context.merge(default: defaults)
+          **safe_context.merge(default: defaults)
         )
       end
 
