@@ -1,9 +1,5 @@
 # Title
 
-[![Build Status](https://travis-ci.org/calebthompson/title.svg)](https://travis-ci.org/calebthompson/title)
-[![Code Climate](https://codeclimate.com/github/calebthompson/title.svg)](https://codeclimate.com/github/calebthompson/title)
-[![Coverage Status](https://coveralls.io/repos/calebthompson/title/badge.svg)](https://coveralls.io/r/calebthompson/title)
-
 Translations for \<title\>s!
 
 ## Usage
@@ -58,4 +54,4 @@ extremely similar approach, and from whence came the idea of using the view
 context to get local assigns to be used in interpolation.
 
 [Brandon Keepers]: https://github.com/bkeepers
-[Abusing Rails I18N to Set Page Titles]: http://opensoul.org/blog/archives/2012/11/05/abusing-rails-i18n-to-set-page-titles/
+[Abusing Rails I18N to Set Page Titles]: https://opensoul.org/2012/11/05/abusing-rails-i18n-to-set-page-titles/
