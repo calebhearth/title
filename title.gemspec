@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
 
-  spec.add_dependency 'rails', '>= 3.1'
+  spec.add_dependency 'activesupport', '>= 3.1'
+  spec.add_dependency 'railties', '>= 3.1'
   spec.add_dependency 'i18n'
 end
